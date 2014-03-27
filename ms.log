@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  14 MAR 2014 15:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  27 MAR 2014 15:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -387,24 +387,62 @@ Package pdftex.def Info: figures/trms_by_baseline.png used on input line 115.
 
 LaTeX Warning: Reference `fig:noise' on page 4 undefined on input line 120.
 
-<figures/psa32_pspec_k3pk_vs_z.png, id=24, 874.467pt x 393.8715pt>
-File: figures/psa32_pspec_k3pk_vs_z.png Graphic file (type png)
+<figures/pspec_Mar24_psa32_zbins_1_80_119_I.png, id=24, 578.16pt x 433.62pt>
+File: figures/pspec_Mar24_psa32_zbins_1_80_119_I.png Graphic file (type png)
 
-<use figures/psa32_pspec_k3pk_vs_z.png>
-Package pdftex.def Info: figures/psa32_pspec_k3pk_vs_z.png used on input line 1
-31.
-(pdftex.def)             Requested size: 469.75499pt x 211.5876pt.
+<use figures/pspec_Mar24_psa32_zbins_1_80_119_I.png>
+Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_80_119_I.png used on
+ input line 128.
+(pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
+
+<figures/pspec_Mar24_psa32_zbins_1_100_139_I.png, id=25, 578.16pt x 433.62pt>
+File: figures/pspec_Mar24_psa32_zbins_1_100_139_I.png Graphic file (type png)
+
+<use figures/pspec_Mar24_psa32_zbins_1_100_139_I.png>
+Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_100_139_I.png used o
+n input line 129.
+(pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
+
+<figures/pspec_Mar24_psa32_zbins_1_110_149_I.png, id=26, 578.16pt x 433.62pt>
+File: figures/pspec_Mar24_psa32_zbins_1_110_149_I.png Graphic file (type png)
+
+<use figures/pspec_Mar24_psa32_zbins_1_110_149_I.png>
+Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_110_149_I.png used o
+n input line 130.
+(pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
+
+<figures/pspec_Mar24_psa32_zbins_1_119_150_I.png, id=27, 578.16pt x 433.62pt>
+File: figures/pspec_Mar24_psa32_zbins_1_119_150_I.png Graphic file (type png)
+
+<use figures/pspec_Mar24_psa32_zbins_1_119_150_I.png>
+Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_119_150_I.png used o
+n input line 131.
+(pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
+
+<figures/psa_p3k_vs_z_28.png, id=28, 722.7pt x 361.35pt>
+File: figures/psa_p3k_vs_z_28.png Graphic file (type png)
+
+<use figures/psa_p3k_vs_z_28.png>
+Package pdftex.def Info: figures/psa_p3k_vs_z_28.png used on input line 137.
+(pdftex.def)             Requested size: 469.75499pt x 234.88023pt.
 
 
 Package natbib Warning: Citation `Parsons:2013p9876' on page 4 undefined on inp
-ut line 137.
+ut line 143.
 
-No file ms.bbl.
+(./ms.bbl [4] [5 <./figures/trms_by_baseline.png>] [6 <./figures/pspec_Mar24_ps
+a32_zbins_1_80_119_I.png> <./figures/pspec_Mar24_psa32_zbins_1_100_139_I.png> <
+./figures/pspec_Mar24_psa32_zbins_1_110_149_I.png> <./figures/pspec_Mar24_psa32
+_zbins_1_119_150_I.png>])
 
 Package natbib Warning: There were undefined citations.
 
-[4] [5 <./figures/trms_by_baseline.png>] [6 <./figures/psa32_pspec_k3pk_vs_z.pn
-g>] (./ms.aux)
+[7] [8 <./figures/psa_p3k_vs_z_28.png>] (./ms.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
 
 LaTeX Warning: There were undefined references.
 
@@ -413,13 +451,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3776 strings out of 493633
- 47471 string characters out of 3143378
+ 3799 strings out of 493633
+ 48446 string characters out of 3143378
  113733 words of memory out of 3000000
- 7006 multiletter control sequences out of 15000+200000
+ 7023 multiletter control sequences out of 15000+200000
  12434 words of font info for 51 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,8n,35p,1091b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,35p,1091b,253s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -431,10 +469,10 @@ cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
 ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
 ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on ms.pdf (6 pages, 347580 bytes).
+Output written on ms.pdf (8 pages, 480229 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
