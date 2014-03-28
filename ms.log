@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  27 MAR 2014 15:57
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  28 MAR 2014 09:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -295,184 +295,116 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-
-Package natbib Warning: Citation `Furlanetto:2006p2267' on page 1 undefined on 
-input line 74.
-
-
-Package natbib Warning: Citation `Morales:2010p8093' on page 1 undefined on inp
-ut line 74.
-
-
-Package natbib Warning: Citation `Pritchard:2012p9555' on page 1 undefined on i
-nput line 74.
-
-
-Package natbib Warning: Citation `Paciga:2013p9943' on page 1 undefined on inpu
-t line 75.
-
-
-Package natbib Warning: Citation `Yatawatta:2013p9699' on page 1 undefined on i
-nput line 75.
-
-
-Package natbib Warning: Citation `Bowman:2013p9950' on page 1 undefined on inpu
-t line 75.
-
-
-Package natbib Warning: Citation `Tingay:2013p9022' on page 1 undefined on inpu
-t line 75.
-
-
-Package natbib Warning: Citation `Parsons:2013p9876' on page 1 undefined on inp
-ut line 75.
-
-[1
+) [1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `sec:obs_meth' on page 2 undefined on input line 77.
-
-
-LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 77.
-
-
-LaTeX Warning: Reference `sec:models' on page 2 undefined on input line 77.
-
-
-LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 77.
-
-
-
-Package natbib Warning: Citation `Parsons:2013p9876' on page 2 undefined on inp
-ut line 89.
-
-
-Package natbib Warning: Citation `Parsons:2010p6757' on page 2 undefined on inp
-ut line 89.
-
-
-Package natbib Warning: Citation `Pober:2012p8800' on page 2 undefined on input
- line 89.
-
-
-Package natbib Warning: Citation `Jacobs:2011p8438' on page 2 undefined on inpu
-t line 89.
-
-
 Package natbib Warning: Citation `Jacobs:2013p10014' on page 2 undefined on inp
-ut line 89.
+ut line 90.
 
+[2] [3]
 
-Package natbib Warning: Citation `Stefan:2013p9926' on page 2 undefined on inpu
-t line 89.
+Package natbib Warning: Citation `jacobs:2013b' on page 4 undefined on input li
+ne 112.
 
-
-Package natbib Warning: Citation `Parsons:2012p9028' on page 2 undefined on inp
-ut line 89.
-
-[2]
-
-Package natbib Warning: Citation `jacobs:2013b' on page 3 undefined on input li
-ne 110.
-
-[3] <figures/trms_by_baseline.png, id=22, 784.1295pt x 499.3857pt>
+<figures/trms_by_baseline.png, id=22, 784.1295pt x 499.3857pt>
 File: figures/trms_by_baseline.png Graphic file (type png)
 
 <use figures/trms_by_baseline.png>
-Package pdftex.def Info: figures/trms_by_baseline.png used on input line 115.
+Package pdftex.def Info: figures/trms_by_baseline.png used on input line 117.
 (pdftex.def)             Requested size: 469.75499pt x 299.1689pt.
-
-
-LaTeX Warning: Reference `fig:noise' on page 4 undefined on input line 120.
-
-<figures/pspec_Mar24_psa32_zbins_1_80_119_I.png, id=24, 578.16pt x 433.62pt>
+ [4] [5 <./figures/trms_by_baseline.png>]
+<figures/pspec_Mar24_psa32_zbins_1_80_119_I.png, id=31, 578.16pt x 433.62pt>
 File: figures/pspec_Mar24_psa32_zbins_1_80_119_I.png Graphic file (type png)
 
 <use figures/pspec_Mar24_psa32_zbins_1_80_119_I.png>
 Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_80_119_I.png used on
- input line 128.
+ input line 136.
 (pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
 
-<figures/pspec_Mar24_psa32_zbins_1_100_139_I.png, id=25, 578.16pt x 433.62pt>
+<figures/pspec_Mar24_psa32_zbins_1_100_139_I.png, id=32, 578.16pt x 433.62pt>
 File: figures/pspec_Mar24_psa32_zbins_1_100_139_I.png Graphic file (type png)
 
 <use figures/pspec_Mar24_psa32_zbins_1_100_139_I.png>
 Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_100_139_I.png used o
-n input line 129.
+n input line 137.
 (pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
 
-<figures/pspec_Mar24_psa32_zbins_1_110_149_I.png, id=26, 578.16pt x 433.62pt>
+<figures/pspec_Mar24_psa32_zbins_1_110_149_I.png, id=33, 578.16pt x 433.62pt>
 File: figures/pspec_Mar24_psa32_zbins_1_110_149_I.png Graphic file (type png)
 
 <use figures/pspec_Mar24_psa32_zbins_1_110_149_I.png>
 Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_110_149_I.png used o
-n input line 130.
+n input line 138.
 (pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
 
-<figures/pspec_Mar24_psa32_zbins_1_119_150_I.png, id=27, 578.16pt x 433.62pt>
+<figures/pspec_Mar24_psa32_zbins_1_119_150_I.png, id=34, 578.16pt x 433.62pt>
 File: figures/pspec_Mar24_psa32_zbins_1_119_150_I.png Graphic file (type png)
 
 <use figures/pspec_Mar24_psa32_zbins_1_119_150_I.png>
 Package pdftex.def Info: figures/pspec_Mar24_psa32_zbins_1_119_150_I.png used o
-n input line 131.
+n input line 139.
 (pdftex.def)             Requested size: 211.3883pt x 158.53795pt.
 
-<figures/psa_p3k_vs_z_28.png, id=28, 722.7pt x 361.35pt>
+<figures/psa_p3k_vs_z_28.png, id=35, 722.7pt x 361.35pt>
 File: figures/psa_p3k_vs_z_28.png Graphic file (type png)
 
 <use figures/psa_p3k_vs_z_28.png>
-Package pdftex.def Info: figures/psa_p3k_vs_z_28.png used on input line 137.
-(pdftex.def)             Requested size: 469.75499pt x 234.88023pt.
+Package pdftex.def Info: figures/psa_p3k_vs_z_28.png used on input line 149.
+(pdftex.def)             Requested size: 225.48038pt x 112.73964pt.
 
+<figures/psa_p3k_vs_z_30.png, id=36, 722.7pt x 361.35pt>
+File: figures/psa_p3k_vs_z_30.png Graphic file (type png)
 
-Package natbib Warning: Citation `Parsons:2013p9876' on page 4 undefined on inp
-ut line 143.
+<use figures/psa_p3k_vs_z_30.png>
+Package pdftex.def Info: figures/psa_p3k_vs_z_30.png used on input line 150.
+(pdftex.def)             Requested size: 225.48038pt x 112.73964pt.
 
-(./ms.bbl [4] [5 <./figures/trms_by_baseline.png>] [6 <./figures/pspec_Mar24_ps
-a32_zbins_1_80_119_I.png> <./figures/pspec_Mar24_psa32_zbins_1_100_139_I.png> <
-./figures/pspec_Mar24_psa32_zbins_1_110_149_I.png> <./figures/pspec_Mar24_psa32
-_zbins_1_119_150_I.png>])
+<figures/psa_p3k_vs_z_33.png, id=37, 722.7pt x 361.35pt>
+File: figures/psa_p3k_vs_z_33.png Graphic file (type png)
+
+<use figures/psa_p3k_vs_z_33.png>
+Package pdftex.def Info: figures/psa_p3k_vs_z_33.png used on input line 151.
+(pdftex.def)             Requested size: 225.48038pt x 112.73964pt.
+
+<figures/psa_p3k_vs_z_38.png, id=38, 722.7pt x 361.35pt>
+File: figures/psa_p3k_vs_z_38.png Graphic file (type png)
+
+<use figures/psa_p3k_vs_z_38.png>
+Package pdftex.def Info: figures/psa_p3k_vs_z_38.png used on input line 152.
+(pdftex.def)             Requested size: 225.48038pt x 112.73964pt.
+ (./ms.bbl [6] [7 <./figures/pspec_Mar24_psa32_zbins_1_80_119_I.png> <./figures
+/pspec_Mar24_psa32_zbins_1_100_139_I.png> <./figures/pspec_Mar24_psa32_zbins_1_
+110_149_I.png> <./figures/pspec_Mar24_psa32_zbins_1_119_150_I.png>])
 
 Package natbib Warning: There were undefined citations.
 
-[7] [8 <./figures/psa_p3k_vs_z_28.png>] (./ms.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[8] [9 <./figures/psa_p3k_vs_z_28.png> <./figures/psa_p3k_vs_z_30.png> <./figur
+es/psa_p3k_vs_z_33.png> <./figures/psa_p3k_vs_z_38.png>] (./ms.aux) ) 
 Here is how much of TeX's memory you used:
- 3799 strings out of 493633
- 48446 string characters out of 3143378
- 113733 words of memory out of 3000000
- 7023 multiletter control sequences out of 15000+200000
+ 3815 strings out of 493633
+ 48902 string characters out of 3143378
+ 117947 words of memory out of 3000000
+ 7036 multiletter control sequences out of 15000+200000
  12434 words of font info for 51 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,8n,35p,1091b,253s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
-sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/lo
-cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
-/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/te
-xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
-ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
-ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on ms.pdf (8 pages, 480229 bytes).
+ 38i,8n,35p,1247b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/loca
+l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local
+/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/
+texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
+exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
+2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2011/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on ms.pdf (9 pages, 601273 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

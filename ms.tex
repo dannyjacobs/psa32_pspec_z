@@ -72,9 +72,9 @@ We present new observations from the Donald C. Backer Precision Array for Probin
 
 \section{Introduction}
 The Epoch of Reionization (EoR), when the first stars ionized the pervasive cosmological Hydrogen in the last global phase change, is predicted to be observable in highly redshifted 21 cm radiation.  The Donald C. Backer Precision Array for Probing the Epoch of Reionization (PAPER, XXX)\footnote{\url{http:\\eor.berkeley.edu}} is a low frequency radio interferometer experiment dedicated to opening this window on the universe.  Challenges include foregrounds which are brighter by several orders of magnitude and limited collecting areas of first generation instruments which necessitate long integration times. Direct observation of hydrogen before and during re-ionization is predicted to deliver a wealth of cosmological and astrophysical data, including the nature of the first stellar objects and the timing and rate of galaxy formation, reviews on the physics of reionization as well as theory about the nature of foregrounds maybe be found in \citet{Furlanetto:2006p2267,Morales:2010p8093,Pritchard:2012p9555}.
-Telescopes seeking to measure this signal include the Giant Metre-wave Radio Telescope (GMRT; \cite{Paciga:2013p9943}), the Low Frequency Array (LOFAR; \cite{Yatawatta:2013p9699}) and the Murchison Widefield Array (MWA; \cite{Bowman:2013p9950} and \cite{Tingay:2013p9022}). PAPER is located in the Karoo desert at the Square Kilometer Array-South Africa cite. PAPER has doubled in size on a yearly basis since 2009, making  EoR observations with each array.  Here we report on deep integrations made with a 32 element array in 2011, first described in \cite{Parsons:2013p9876}, hereafter P14.  In that work we described in detail a method used to estimate power spectra in the presence of bright foregrounds. Using this method we combined 120 XXX of data to place upper limits on the power spectrum of EoR. Here we extend this analysis of the same data include multiple redshift bins allowing us to place constraints on the time history of reionization.
+Telescopes seeking to measure this signal include the Giant Metre-wave Radio Telescope (GMRT; \cite{Paciga:2013p9943}), the Low Frequency Array (LOFAR; \cite{Yatawatta:2013p9699}) and the Murchison Widefield Array (MWA; \cite{Bowman:2013p9950} and \cite{Tingay:2013p9022}). PAPER is located in the Karoo desert at the Square Kilometer Array-South Africa cite. PAPER has doubled in size on a yearly basis since 2009, making observations with each array.  Here we report on deep integrations made with a 32 element array in 2011, first described in \cite{Parsons:2013p9876}, hereafter P14.  In that work we described in detail a method used to estimate power spectra in the presence of bright foregrounds. Using this method we combined 120 XXX of data to place upper limits on the power spectrum of HI in the early universe. Here we extend this analysis of the same data to  multiple redshift bins allowing us to place constraints throughout the likely time period of reionization.
 
-This paper summarizes the observations and reduction methodology in \ref{sec:obs_meth}, present the new upper limits in \ref{sec:results}. In \ref{sec:models} we examine the impacts of the new data points on theory and conclude in \ref{sec:conclusion}.
+This paper summarizes the observations and reduction methodology in \ref{sec:obs_meth}, present the new upper limits in \ref{sec:results} in \ref{sec:conclusion} offer some preliminary conclusions.
 
 
 
@@ -86,26 +86,28 @@ This paper summarizes the observations and reduction methodology in \ref{sec:obs
 %This paper extends the result ARP2013a to cover the redshift range XXX.
 
 \section{Observations and reduction}
+\label{sec:observations}
 As the observations and methods in use are unchanged from those described in P14, we will offer a quick summary and refer the reader to \cite{Parsons:2013p9876} for a more in depth discussion.  A general overview of the PAPER system can be found in \cite{Parsons:2010p6757}, calibration of the primary beam in \cite{Pober:2012p8800}, and imaging results in \cite{Jacobs:2011p8438,Jacobs:2013p10014,Stefan:2013p9926}.  Sensitivity analysis described in \cite{Parsons:2012p9028} revealed that for the low gain elements employed by PAPER, a highly redundant ``grid'' type arrangement offers a significant sensitivity boost.  Each baseline samples a different mode of the EoR power spectrum. Each redundant baseline one samples a cosmological mode at high SNR before being combined with other different $k$ modes.  The PAPER South Africa 32 antenna deployment (PSA32) was arranged in a 4x8 grid.  Here we include only the three shortest types of spacings, those between adjacent columns within at least one row of each other, a selection containing 70 30m baselines.
 
 Observations spanning the band between 100 to 200-MHz ($13.1>z>6.1$) were recorded at a resolution of 48kHz into 10.7s bins beginning Dec 7, 2011 and ending XXX for a total of XXX nights.  WIthin this set we included observations in the LST range 1h30m - 6h30m where the sky dominated system temperature is at a minimum.  
 
 
 \section{Reduction}
+\label{sec:obs_meth}
 Here we summarize our data reduction steps, for detailed descriptions see P14.
 
-In several stages throughout the analysis process we take a 2D Fourier transform of the visibility spectra $V(t,\nu)$ into ``delay'/fringe rate' space.  In this space, smooth spectrum sources are physically localized to delays shorter than the light travel time length of the baseline (e.g. sources at the horizon, in the direction of the baseline vector) and fringe rates shorter than the sidereal rate.  In the Fourier space sources are highly localized but are convolved with the dual of the spectrum sampling function, which is uneven due to flagging of interference.  To account for this missing data we use a CLEAN like, iterative, peak finder and subtraction algorithm which is limited to finding peaks within the physically allowable ranges, and occasionally beyond, where necessary to account for spectral and temporal dispersion. 
+In several stages throughout the analysis process we take a 2D Fourier transform of the visibility spectra $V(t,\nu)$ into ``delay'/fringe rate'' space.  In this space, smooth spectrum sources are physically localized to delays shorter than the light travel time length of the baseline (e.g. sources at the horizon, in the direction of the baseline vector) and fringe rates shorter than the sidereal rate.  In this Fourier space sources are highly localized, deviations from a flat spectrum manifesting as a slight dispersion. In this space the spectrum sampling function, which is uneven due to flagging of interference takes the form of a convolution by a point-spread-function, much in the same way an imperfect sampling of the uv plane gives rise to the psf of an interferometer.  To account for this we use a CLEAN like, iterative, peak finder and subtraction algorithm which is limited to finding peaks within the physically allowable ranges, and occasionally beyond, where necessary to account for spectral and temporal dispersion. 
 
 The data analysis pipeline essentially consists of iterative application of the delay/fringe rate transform process, with an ever tightening CLEAN box, interleaved with stages of averaging (time, night, and baseline), before finally computing a power spectrum.  This final step takes advantage of the redundant baselines to make an unbiased power spectrum estimate by cross-multiplying identical baselines.  
 
 
 \subsection{Initial Averaging}
-  First, the raw data are down-selected to just the 30m long baselines. %I know this isn't technically true, but I think its important that the downselect is obvious.
-   The visibilities are then compressed in the frequency and time directions by filtering delay modes above the horizon and highest frequency fringe rates for a 300m baseline.  This filtering is done in tandem with a radio frequency interference (RFI) flagging step, using the CLEAN residuals to flag 4$\sigma$ RFI in the absence of bright sky signals and then feeding the flags back into another iteration of the compression step. This mitigate the effects of RFI leaking around the filter to generate a cleaner averaged data set and results in a time and frequency bin of length 45.7s and width 400kHz. % XXX check  
-  This process reduces the data volume by a factor of \~40.
+  First, the raw data are down-selected to just the 70 30m long baselines described in Section \ref{sec:observations}.  %I know this isn't technically true, but I think its important that the downselect is obvious.
+   The visibilities are then compressed in the frequency and time directions by filtering delay modes above the horizon and highest frequency fringe rates for a 300m baseline.  This filtering is done in tandem with a radio frequency interference (RFI) flagging step, using the CLEAN residuals to flag 4$\sigma$ deviations in the absence of bright sky signals and then feeding the flags back into another iteration of the compression step. This mitigate the effects of RFI leaking around the delay filter to generate a cleaner averaged data set and results in a time and frequency bin of length 39.6s and width 492.61kHz. 
+  This process reduces the data volume by a factor of \~20, or roughly an order of magnitude improvement on traditional time and frequency averaging.
   
 \subsection{Calibration}
-We model per-antenna complex gains with a phase slope and spectral amplitude.  Because the array samples correlations redundantly, the relative calibration between antennae is numerically overdetirmined and tractable as a linear algebra problem.  These solutions vary little over the observing period and exhibit less than 1\% rms variation. %XXX is that so??? 
+We model the gain as a per-antenna amplitude, a phase slope -physically a single time delay- and a single passband for all antennae.  Because the array samples correlations redundantly, the relative calibration between antennae is numerically overdetermined and tractable as a linear algebra problem.  These solutions vary little over the observing period and exhibit less than 1\% rms variation. This method, as applied to this PAPER data set is discussed in depth by Zheng et al (in prep).
 
 By itself, the redundant solution is completely independent of any sky model. The redundant solution contains two free delay parameters and an overall amplitude scale. We fit the two delay parameters to a model of Pictor A, Fornax A, and the Crab Nebula during a time when the sky is dominated by these three sources while marginalizing over the unknown ratio between the three sources. With the delays in place we are now able form a beam on Pictor A and (for each channel) set the overall amplitude to the calibration value found in \cite{jacobs:2013b}.
   
@@ -117,29 +119,42 @@ By itself, the redundant solution is completely independent of any sky model. Th
 \end{figure}
 %XXX more, and a plot of those redundancy residuals
 \subsection{Foregrounds}
-Foregrounds are filtered from the calibrated data by removing all bright delay components with light travel times less then the baseline length. Where during the previous compression step a  horizon of 300m (1800ns)  was used to calculate the window size we now choose a window corresponding to the 30m baselines under study.  At this point a four hour long running mean is subtracted. This removes excess correlation due to cross-talk in the analog signal chain. The residuals are then flagged once more for RFI before the XXX nights of data are averaged into 10 minute long local sidereal time (LST) bins.  During averaging we found that some lst bins were dominated by very bright data points due to some non-noise-like data points. As these were very rare we found that removing the ten brightest points from every bin, a small median filter, was quite effective.   The root mean square of the residual signal (seen in Figure \ref{fig:noise}) at the end of this process is close to the 1mK level expected given the total integration time.
+Foregrounds are filtered from the calibrated data by removing all bright delay components with light travel times less then the baseline length. Where during the previous compression step a liberal horizon of 300m (1800ns, much longer than the 30 meter baselines under study)  was used to calculate the window size, we now choose a window corresponding to the 30m baselines under study.  The CLEAN model that is iteratively built is then subtracted from the data leaving residuals which we carry into the next stage. Next, a four hour long running mean is subtracted. This removes excess correlation due to cross-talk in the analog signal chain. The residuals are then flagged once more for RFI before the XXX nights of data are averaged into 36.4 second long local sidereal time (LST) bins.  During averaging we found that some lst bins were dominated by very bright data points due to some exceedingly bright samples. As these were very rare we found that removing the ten brightest points from every bin, a small median filter, was quite effective.   The root mean square of the residual signal (seen in Figure \ref{fig:noise}) at the end of this process is close to the 1mK level expected given the total integration time.  
 
 %This step is the first point at which signal loss could occur. To measure the loss we add white noise into the data at a level sufficient to double the system temperature (to make it easily detectable on the output), subtract  and then measure the fractional difference post filtration. We recover XXX\% of the injected signal.
 
 %delay transform, covariance projection (lossless, and lossy), bin and bootstrap average,
 \subsection{Power Spectrum}
+The output of the forgoing is a single calibrated and foreground filtered sidereal night. The power spectrum is estimated by selecting a 10MHz bandwidth range centered on the redshift of interest, performing a delay transform and cross correlating all the bins.  To preserve the isolation of any foregrounds which remain, we increase the spectral range by 5MHz on each side and multiply by a blackman-harris window thus providing a much higher dynamic range delay spectrum psf.  This leaves us with 40 delay samples on each of 70 baselines which are divided into three redundant groups. Within these groups we compute the  correlation between each mode.  The cross correlation of the same delay modes between different redundant baselines provides our estimate of the power spectrum.  Cross correlation between different modes provides our measure of systematic bias.  These correlations should be identical between all redundant baselines to within the level of the noise. In practice, however there are some correlations deviate significantly from the median.  These are removed by subtracting an average sky and then projecting out large residual modes.  For more see Appendix of C of \cite{Parsons:2013p9876}.
+
+The residual correlations are all samples of the power spectrum. To estimate the final power spectrum and its uncertainty we compute the mean and variance of many random bootstrap-selected subsamples, sampling the dimensions: sidereal time, redundant baseline pair, and delay sign\footnote{As visibilities are complex, both the positive and negative delays  carry different information.}
+
+
+
 \begin{figure}
 \centering
 \includegraphics[width=0.45\textwidth]{figures/pspec_Mar24_psa32_zbins_1_80_119_I.png}
 \includegraphics[width=0.45\textwidth]{figures/pspec_Mar24_psa32_zbins_1_100_139_I.png}
 \includegraphics[width=0.45\textwidth]{figures/pspec_Mar24_psa32_zbins_1_110_149_I.png}
 \includegraphics[width=0.45\textwidth]{figures/pspec_Mar24_psa32_zbins_1_119_150_I.png}
-\caption{\label{fig:pspecs} Clockwise from top left: power spectra centered on redshifts 8.5, 7.9, 7.6 and 7.5 (frequencies: 149.5, 159.5 164.5, and 167 MHz) at a bandwidth of 20MHz}
+\caption{\label{fig:pspecs} Right to left from top: power spectra centered on redshifts 8.5, 7.9, 7.6 and 7.5 (frequencies: 149.5, 159.5 164.5, and 167 MHz) at a bandwidth of 20MHz}
 \end{figure}
-\section{Discusion}
+\section{Results}
+\label{sec:results}
+In  Figure \ref{fig:pspecs} we see power spectra at different redshift bins, and in Figure \ref{fig:slices} we see power spectra at different $k$ modes as a function of redshift.
+
 
 \begin{figure}
-\includegraphics[width=\textwidth]{figures/psa_p3k_vs_z_28.png}
-\caption{Power spectrum amplitude at k=0.28 hMpc$^-1$.  Paciga 2013 GMRT marked with an 'x', Parsons 2013 PAPER limit marked with thin black, this work marked with thick blue diamonds.}
+\centering
+\includegraphics[width=0.48\textwidth]{figures/psa_p3k_vs_z_28.png}
+\includegraphics[width=0.48\textwidth]{figures/psa_p3k_vs_z_30.png}
+\includegraphics[width=0.48\textwidth]{figures/psa_p3k_vs_z_33.png}
+\includegraphics[width=0.48\textwidth]{figures/psa_p3k_vs_z_38.png}
+\caption{Power spectrum amplitude vs redshift at a selection of k modes. Right to left from top, k=0.28,0.3,0.33,0.38 hMpc$^-1$.  Paciga 2013 GMRT marked with an 'x', Parsons 2013 PAPER limit marked with thin black, this work marked with thick blue diamonds. \label{fig:slices}}
 \end{figure}
 
 \section{Conclusions}
-
+\label{sec:conclusion}
 Here we have, using the same dataset extended the expanded the redshift coverage of \cite{Parsons:2013p9876} cover the range $10>z>7$.  These measurements demonstrate a precision removal of foregrounds to one part in ten million across the entire redshift range of interest. Though, with only 32 antenna, this data lacks the sensitivity to exclude all but the most extreme models, it does demonstrate the ability of the wideband filtration method to affectively remove foregrounds to the precision needed to integrate XXX nights to the thermal noise limit.  As future observations with PAPER  will add sensitivity primarily by increasing to 128 antennae this projects well for our ability to reach design sensitivity. 
 
 %\begin{align}
