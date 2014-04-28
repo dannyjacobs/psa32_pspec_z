@@ -126,18 +126,20 @@ Relative calibration is all that is necessary to form a power spectrum, however 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{figures/psa32_trms_with_and_without_fr_filtering_z.png}
-\caption{\label{fig:noise} Noise estimated by differencing adjacent frequencies (magenta) and between redundant baselines (blue), compared with an estimate of the theoretical noise level (dotted) indicating the rising significance of foregrounds as more data are added and sensitivity increases. The top three lines show noise after filtering foregrounds and binning into 40s long sidereal bins.  At this noise level the frequency and baseline differences are roughly similar, both demonstrate the same small bumps of increased noise due to interference flagging.  The bottom three lines show the noise level after integrating up to the maximum fringe rate of 914s. Here we see the interference bumps suppressed as more samples with different flagging are averaged together. We also see the difference between baselines become consistently larger than the difference between channels. In all cases the noise spectrum is characterized by an overall slope towards lower frequencies owing to the power law slope of the galactic spectrum which drives the system temperature.  At the band edges noise rises dramatically, more so in the difference between baselines, then the spectral difference.  This is, in part, due to the use of the Blackman-Harris window in the foreground filter is optimized for filtering foregrounds at the center of the band with minimal contamination of higher delay modes. We also note that the theoretical noise is consistently lower than the observed.  This is most likely due to inaccuracies in the counting of data points included in the 92-day average, a key input into the theoretical noise limit. For this reason we estimate all error bars with a bootstrap method rather than by direct propagation.  Correct propagation of error bars is a subject for future improvement.}
+\caption{\label{fig:noise} Noise estimated by differencing adjacent frequencies (magenta) and between redundant baselines (blue), compared with an estimate of the theoretical noise level (dotted) indicating the rising significance of foregrounds as more data are added and sensitivity increases. The top three lines show noise after filtering foregrounds and binning into 40s long sidereal bins.  At this noise level the frequency and baseline differences are roughly similar, both demonstrate the same small bumps of increased noise due to interference flagging.  The bottom three lines show the noise level after integrating up to the maximum fringe rate of 776s. Here we see the interference bumps suppressed as more samples with different flagging are averaged together. We also see the difference between baselines become consistently larger than the difference between channels. In all cases the noise spectrum is characterized by an overall slope towards lower frequencies owing to the power law slope of the galactic spectrum which drives the system temperature.  At the band edges noise rises dramatically, more so in the difference between baselines, then the spectral difference.  This is, in part, due to the use of the Blackman-Harris window in the foreground filter is optimized for filtering foregrounds at the center of the band with minimal contamination of higher delay modes. We also note that the theoretical noise is consistently lower than the observed.  This is most likely due to inaccuracies in the counting of data points included in the 92-day average, a key input into the theoretical noise limit. For this reason we estimate all error bars with a bootstrap method rather than by direct propagation.  Correct propagation of error bars is a subject for future improvement.}
 \end{figure}
 %XXX more, and a plot of those redundancy residuals
-\subsection{Foregrounds}
-Foregrounds are filtered from the calibrated data by removing all bright delay components with light travel times less then the baseline length. Where during the previous compression step a liberal horizon of 300m (1800ns, much longer than the 30 meter baselines under study)  was used to calculate the window size, we now choose a window corresponding to the 30m baselines under study.  The CLEAN model that is iteratively built is then subtracted from the data leaving residuals which we carry into the next stage. Next, a four hour long running mean is subtracted. This removes excess correlation due to cross-talk in the analog signal chain. The residuals are then flagged once more for RFI before the 92 nights of data are averaged into 36.4 second long local sidereal time (LST) bins.  During averaging we found that some LST bins were dominated by very bright data points due to some exceedingly bright outlier samples. As these were very rare we found that removing the 10\% brightest from every bin, a small median filter, was quite effective.  The source of these outliers is not known,  a likely possibility is instability in the analog signal chain stimulated by weather or bright interference which have been observed in subsequent seasons.  The root mean square of the residual signal (seen in Figure \ref{fig:noise}) at the end of this process is close to the 1mK level expected given the total integration time.  
+\subsection{Foreground Filtering and Night Averaging}
+Foregrounds are filtered from the calibrated data by removing all bright delay components with light travel times less then the baseline length. Where during the previous compression step a liberal horizon of 300m (1800ns, much longer than the 30 meter baselines under study)  was used to calculate the window size, we now choose a window corresponding to the 30m baselines under study.  The CLEAN model that is iteratively built is then subtracted from the data leaving residuals which we carry into the next stage. Next, a four hour long running mean is subtracted. This removes excess correlation due to cross-talk in the analog signal chain. The residuals are then flagged once more for RFI before the 92 nights of data are averaged into 36.4 second long local sidereal time (LST) bins.  During averaging we found that some LST bins were dominated by very bright data points due to some exceedingly bright outlier samples. As these were very rare we found that removing the 10\% brightest from every bin, a small median filter, was quite effective.  The source of these outliers is not known,  a likely possibility is instability in the analog signal chain stimulated by weather or bright interference, a circumstance that has since been observed in later seasons. 
 
-Though the frequency and repeated nightly observations have been averaged to their maximum extent, at 40s integrations the time axis has yet to be fully exploited.  Sky-like fringes on a 30m baseline rotate much slower than 40 seconds.  Performing a final fringe-rate filter, this time limiting to fringe-rates expected on a 30m baseline (down from 300m in the last iteration) we arrive at a data-set averaged to 900s, the maximum possible while still maintaining coherency. 
+
+Though the frequency and repeated nightly observations have been averaged to their maximum extent, at 40s integrations the time axis has yet to be fully exploited.  Sky-like fringes on a 30m baseline rotate much slower than 40 seconds.  Performing a final fringe-rate filter, this time limiting to fringe-rates expected on a 30m baseline (down from 300m in the last iteration) we arrive at a data-set averaged to 900s, the maximum possible while still maintaining coherency.    The root mean square of the residual signal (seen in Figure \ref{fig:noise}) at the end of this process is close to the 3mK level expected given the total integration time.  
 
 %This step is the first point at which signal loss could occur. To measure the loss we add white noise into the data at a level sufficient to double the system temperature (to make it easily detectable on the output), subtract  and then measure the fractional difference post filtration. We recover XXX\% of the injected signal.
 
 %delay transform, covariance projection (lossless, and lossy), bin and bootstrap average,
 \subsection{Power Spectrum}
+\label{sec:power_spectrum}
 The output of the forgoing is a single calibrated and foreground filtered sidereal night. The power spectrum is estimated in the delay spectrum of  a 10MHz bandwidth range centered on the redshift of interest. To preserve the isolation of any foregrounds which remain, we increase the spectral range by 5MHz on each side and multiply by a Blackman-Harris window thus providing a much higher dynamic range delay spectrum point spread function. 
 
 This leaves us with 40 delay samples on each of 70 baselines which are divided into three redundant groups. Within these groups we compute the  correlation between each mode.  The cross correlation of the same delay modes between different redundant baselines provides our estimate of the power spectrum.  Cross correlation between different delay modes provides our measure of systematic bias.  Sky-like correlations should be identical between all redundant baselines to within the level of the noise. In practice some correlations deviate significantly from the median.  These are removed by iteratively dividing the covariance into a model of systematics and a model of sky-like emission and then projecting out large residual modes. This is done by dividing the baselines into different groups such that all cross-multiplications are done without introducing noise bias.  For more see Appendix of C of P14.
@@ -157,17 +159,38 @@ The residual correlations are all samples of the power spectrum. To estimate the
 \end{figure}
 \section{Results}
 \label{sec:results}
-In  Figure \ref{fig:pspecs} we see power spectra at different redshift bins, and in Figure \ref{fig:slices} we see power spectra at different $k$ modes as a function of redshift.
+\subsection{Foreground Filtering and Noise Levels}
+\label{sec:noise}
+The root-mean-square of the residual measures how well we've removed foregrounds.  In Figure \ref{fig:noise} we examine $T_{rms}$ as calculated by differencing between adjacent channels and between redundant baselines. We see that in the last step of coherent integration, the step between 40 second to 789 second integrations, the noise level decreases by the expected factor of $\sqrt{789/40}$.  At both stages the noise level found by both methods is roughly consistent with the theoretical level, only deviating significantly at the edges where the effective signal to noise due to the Blackman Harris window drops precipitously. 
 
-Discussion points:
+The theoretical noise level is a straightforward calculation, but given the method employed here, should be given due description.
+Not every LST bin is observed an equal number of times nor is the noise level constant, as the galaxy moves overhead.  the number of points in each bin is mostly determined by the observing schedule, which for PAPER is simply sunrise to sunset, but also by any flagging of data or observing outage (only 92 of the 103 days in the observing period have recorded data).  Unfortunately, technical problems limited the retention of the exact cumulative count of points averaged into each LST bin during the averaging process.  Here we have chosen to use the first order estimate based on the observing schedule to estimate the number of observations in each LST. Some bins are observed only a few times, while a slim range in the LST range 6 - 9 hours is observed on every night. On average each bin is measured 64 times. Given this accounting of the number of samples $N(lst)$, we estimate the final rms temperature to be
+
+\[
+T_{rms}  = \frac{T_{g}(lst)}{\sqrt{2BtN(lst)}} + T_{rcvr}
+\]
+where B and t are the 496kHz channel width and lst bin length, respectively. We model galactic temperature $T_g$ by summing the de Oliviera-Costa global sky model \citep{deOliveiraCosta:2008p2242} convolved by the PAPER beam as a function of lst and $T_{rcvr}$=320K as the system temperature of 550K (found in P14) minus the mean galactic temperature from that time period. The final result is plotted as a dotted line in Figure \ref{fig:noise} for before and after fringe rate filtering (t=40s and 788s)%XXX TODO fold this back into figure 1 so that it shows the correct noise estimate
+
+
+The final fringe-rate step is the last coherent average of the processing routine and represents the last large gain in sensitivity; all following averaging steps are done incoherently on the square of the visibilities where sensitivity is gained at a much slower rate. For this reason the noise curves (bottom three curves of Figure \ref{fig:noise})  merit closer inspection.  At this sensitivity level we see a notable excess of power in the rms difference between baselines. Though the cause of this excess is unknown, it is suggestive of the excess covariance between redundant baselines which we remove in Section \ref{sec:power_spectrum} a hypothesis also supported by the high levels of residual foregrounds in the redshift 10.5 bin where the baseline difference rms is highest.
+
+
+
+
+\subsection{Power Spectra}
+
+
+In  Figure \ref{fig:pspecs} we show the  power spectra at different redshift bins --showing both the spherically averaged power spectrum plotted in $P_k$ units (left) and the final estimate of $\Delta^2$ -- and in Figure \ref{fig:slices} we see power spectra at different $k$ modes as a function of redshift  all plotted with $2\sigma$ error bars.  In the redshift 7.7 bin the foreground measurements (the inner 5 data points) have been included for comparison with P14.  The theoretical noise power spectrum is estimated by counting data points using the method of \cite{Pober:2014p10390}.  At the lowest redshift (7.6) most of the power spectrum points are consistent with zero and error bars broadly reflective of the noise model. The number of noise-like bins decreases towards higher redshifts, until the redshift 10.5 where all bins appear to be dominated by systematics rather than noise.  In all but the redshift 10.5 slice, the $P_k$ spectrum has a clear notch near the $k_\parallel=0$ where the broadband foreground filter has removed power.  At redshift 10.5, the broadband filter amplitude is down 75\% from its peak at z=8.5
+
+
+
+
+
+Limitations: 
 \begin{enumerate}
-\item as a check, the redshift 7.7 is very similar 
-\item power spectrum at 10.3 is completely foreground contaminated. this appears to be consistent with the noise curves where the residual is much higher.
-\item Most of the data points lie above the theoretical noise curves. this because the noise model is a simple root(2Nbt) estimate.
-\item we could get a redshift bin at 7 if we had a prescription for including non-uniform weights.  
+\item time dependence of cal solutions
+\item missing data
 \end{enumerate}
-
-
 
 \begin{figure}
 \centering
@@ -175,7 +198,7 @@ Discussion points:
 \includegraphics[width=0.48\textwidth]{{figures/psa32_pspec_k_0.20_lin}.png}
 \includegraphics[width=0.48\textwidth]{{figures/psa32_pspec_k_0.30_lin}.png}
 \includegraphics[width=0.48\textwidth]{{figures/psa32_pspec_k_0.40_lin}.png}
-\caption{Power spectrum amplitude vs redshift at a selection of k modes. Right to left from top, k=0.1,0.2,0.3,0.4 hMpc$^-1$.  Paciga 2013 GMRT marked with an 'x', Parsons 2014 PAPER limit marked with thin black, this work marked with thick blue diamonds. \label{fig:slices}}
+\caption{Power spectrum amplitude vs redshift at a selection of k modes. Right to left from top, k=0.1,0.2,0.3,0.4 hMpc$^-1$.  Paciga 2013 GMRT marked with an 'x', Parsons 2014 PAPER limit marked with thin black, this work marked with thick blue diamonds. Points consistent with  \label{fig:slices}}
 \end{figure}
 
 \section{Conclusions}
@@ -183,7 +206,11 @@ Discussion points:
 
 
 
-Here we have, using the same dataset extended the expanded the redshift coverage of \cite{Parsons:2013p9876} cover the range $10>z>7$.  These measurements demonstrate a precision removal of foregrounds to one part in ten million across the entire redshift range of interest. Though, with only 32 antenna, this data lacks the sensitivity to exclude all but the most extreme models, it does demonstrate the ability of the wideband filtration method to affectively remove foregrounds to the precision needed to integrate 92 nights (1809 hours) to the thermal noise limit.  As future observations with PAPER  will add sensitivity primarily by increasing to 128 antennae this projects well for our ability to reach design sensitivity. 
+Here we have extended the redshift coverage of \cite{Parsons:2013p9876} to cover the range $10.5>z>7.5$.   These measurements demonstrate a precision removal of foregrounds to one part in ten million across a wide redshift.  With only 32 antenna, this data lacks the sensitivity to exclude all but the most extreme models, however, it does demonstrate the ability of the wideband filtration method to affectively remove foregrounds to the precision needed to integrate a full season to the thermal noise limit.  As future observations with PAPER  will add sensitivity primarily by increasing to 128 antennae this projects well for our ability to reach design sensitivity. 
+
+
+
+
 
 %\begin{align}
 %\label{eq:BrightnessFluctuations}
