@@ -126,7 +126,7 @@ Relative calibration is all that is necessary to form a power spectrum, however 
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth]{figures/psa32_trms_with_and_without_fr_filtering_z.png}
-\caption{\label{fig:noise} Noise estimated by differencing adjacent frequencies (magenta) and between redundant baselines (blue), compared with an estimate of the theoretical noise level (dotted) indicating the rising significance of foregrounds as more data are added and sensitivity increases. The top three lines show noise after filtering foregrounds and binning into 40s long sidereal bins.  At this noise level the frequency and baseline differences are roughly similar, both demonstrate the same small bumps of increased noise due to interference flagging.  The bottom three lines show the noise level after integrating up to the maximum fringe rate of 776s. Here we see the interference bumps suppressed as more samples with different flagging are averaged together. We also see the difference between baselines become consistently larger than the difference between channels. In all cases the noise spectrum is characterized by an overall slope towards lower frequencies owing to the power law slope of the galactic spectrum which drives the system temperature.  At the band edges noise rises dramatically, more so in the difference between baselines, then the spectral difference.  This is, in part, due to the use of the Blackman-Harris window in the foreground filter is optimized for filtering foregrounds at the center of the band with minimal contamination of higher delay modes. We also note that the theoretical noise is consistently lower than the observed.  This is most likely due to inaccuracies in the counting of data points included in the 92-day average, a key input into the theoretical noise limit. For this reason we estimate all error bars with a bootstrap method rather than by direct propagation.  Correct propagation of error bars is a subject for future improvement.}
+\caption{\label{fig:noise} Root mean square (rms) noise before and after integrating to 10 minute LST bins (top and bottom sets of curves) indicating the rising significance of foregrounds as we take the last deep integration step. Noise is estimated by differencing adjacent frequencies (magenta) and between redundant baselines (blue), compared with an estimate of the theoretical noise level (dotted). The top three lines show noise after filtering foregrounds and binning into 40s long sidereal bins.  At this noise level the frequency and baseline differences are roughly similar, both demonstrate the same small bumps of increased noise due to interference flagging and are consistent with noise over much of the band.  The bottom three lines show the noise level after integrating up to the maximum fringe rate of 776s. The step between the top and bottom sets is the last coherent integration with noise largely decreasing by the expected factor $\sqrt{776/40}$ except in the difference between baselines (blue) which demonstrates a clear excess at all frequencies, particularly above redshift 10. With this last large jump in sensitivity we are now seeing the slight dominance of baseline covariance over the spectral derivative rms. }
 \end{figure}
 %XXX more, and a plot of those redundancy residuals
 \subsection{Foreground Filtering and Night Averaging}
@@ -155,7 +155,7 @@ The residual correlations are all samples of the power spectrum. To estimate the
 \includegraphics[width=0.45\textwidth]{{figures/pspec_log_z_7.94}.png}
 \includegraphics[width=0.45\textwidth]{{figures/pspec_log_z_7.68}.png}
 \includegraphics[width=0.45\textwidth]{{figures/pspec_log_z_7.55}.png}
-\caption{\label{fig:pspecs} Left to right from top: power spectra centered on redshifts 10.3,8.5, 7.9, 7.7 and 7.6 (frequencies: 127, 149.5, 159.5 164.5, and 167 MHz) at an effective bandwidth of 10MHz.  Though the redshift 7.7 bin overlaps adjacent points it has provided for comparison against P14 which targeted this redshift with this data and reduction pipeline.}
+\caption{\label{fig:pspecs} Left to right from top: power spectra centered on redshifts 10.3,8.5, 7.9, 7.7 and 7.6 (frequencies: 127, 149.5, 159.5 164.5, and 167 MHz) at an effective bandwidth of 10MHz or redshift range 0.5  }
 \end{figure}
 \section{Results}
 \label{sec:results}
@@ -180,17 +180,11 @@ The final fringe-rate step is the last coherent average of the processing routin
 \subsection{Power Spectra}
 
 
-In  Figure \ref{fig:pspecs} we show the  power spectra at different redshift bins --showing both the spherically averaged power spectrum plotted in $P_k$ units (left) and the final estimate of $\Delta^2$ -- and in Figure \ref{fig:slices} we see power spectra at different $k$ modes as a function of redshift  all plotted with $2\sigma$ error bars.  In the redshift 7.7 bin the foreground measurements (the inner 5 data points) have been included for comparison with P14.  The theoretical noise power spectrum is estimated by counting data points using the method of \cite{Pober:2014p10390}.  At the lowest redshift (7.6) most of the power spectrum points are consistent with zero and error bars broadly reflective of the noise model. The number of noise-like bins decreases towards higher redshifts, until the redshift 10.5 where all bins appear to be dominated by systematics rather than noise.  In all but the redshift 10.5 slice, the $P_k$ spectrum has a clear notch near the $k_\parallel=0$ where the broadband foreground filter has removed power.  At redshift 10.5, the broadband filter amplitude is down 75\% from its peak at z=8.5
+In  Figure \ref{fig:pspecs} we show the  power spectra at different redshift bins --showing both the spherically averaged power spectrum plotted in $P_k$ units (left) and the final estimate of $\Delta^2$ -- and in Figure \ref{fig:slices} we see different $k$ mode slices as a function of redshift  all plotted with $2\sigma$ error bars.   The theoretical noise power spectrum is estimated using the method described in \cite{Pober:2014p10390} assuming a system temperature of 550K and the observing scheme described in Section \ref{sec:observations}.  Generally, both figures convey a picture of a power spectrum dominated by noise, with foregrounds encroaching from modes closest to the foreground contaminated modes.  Foreground dominance appears to grow with increasing redshift, mirroring the rise in baseline-to-baseline rms we found in Figure \ref{fig:noise}.  Recall that the wide-band foreground model we have subtracted is built by weighting the entire band by a Blackman-Harris window function.   Foreground removal is much weaker at this frequency, with the model subtracted being centered around 150MHz, contributions from this point in the band are down-weighted by 75\%.  This filter leads to the notch of missing power near $k_\parallel=0$  (except at z=7.68 where the foregrounds have been left in for comparison).  Only at redshift 10.3 is this notch nearly non-existent.  The relative distribution of foreground removal accuracy is also visible in the shape of $\Delta^2$ vs redshift at $k=0.1$ which is only a factor of two away from the light travel horizon.  This bin, which is firmly well into the foreground dominated portion of $k$ space has much the same shape as the $T_rms$ curve in Figure \ref{fig:noise}, with a minimum near redshift 8.5 and a dramatic rise above redshift 10.
 
 
 
 
-
-Limitations: 
-\begin{enumerate}
-\item time dependence of cal solutions
-\item missing data
-\end{enumerate}
 
 \begin{figure}
 \centering
@@ -198,7 +192,7 @@ Limitations:
 \includegraphics[width=0.48\textwidth]{{figures/psa32_pspec_k_0.20_lin}.png}
 \includegraphics[width=0.48\textwidth]{{figures/psa32_pspec_k_0.30_lin}.png}
 \includegraphics[width=0.48\textwidth]{{figures/psa32_pspec_k_0.40_lin}.png}
-\caption{Power spectrum amplitude vs redshift at a selection of k modes. Right to left from top, k=0.1,0.2,0.3,0.4 hMpc$^-1$.  Paciga 2013 GMRT marked with an 'x', Parsons 2014 PAPER limit marked with thin black, this work marked with thick blue diamonds. Points consistent with  \label{fig:slices}}
+\caption{Power spectrum amplitude vs redshift at a selection of k modes. Left to right from top, k=0.1,0.2,0.3,0.4 hMpc$^{-1}$.  Paciga 2013 GMRT marked with an 'x', Parsons 2014 PAPER limit marked with thin black, this work marked with thick blue diamonds.  The k=0.1 hMpc$^{-1}$ bin (top-left), which samples the delay spectrum at only 2x the maximum horizon delay  is foreground dominated with  a redshift dependence similar to the  $T_{rms}$ residual in Figure \ref{fig:noise}.  The rest are consistent with thermal noise.  \label{fig:slices}}
 \end{figure}
 
 \section{Conclusions}
@@ -206,7 +200,9 @@ Limitations:
 
 
 
-Here we have extended the redshift coverage of \cite{Parsons:2013p9876} to cover the range $10.5>z>7.5$.   These measurements demonstrate a precision removal of foregrounds to one part in ten million across a wide redshift.  With only 32 antenna, this data lacks the sensitivity to exclude all but the most extreme models, however, it does demonstrate the ability of the wideband filtration method to affectively remove foregrounds to the precision needed to integrate a full season to the thermal noise limit.  As future observations with PAPER  will add sensitivity primarily by increasing to 128 antennae this projects well for our ability to reach design sensitivity. 
+With this paper we have extended the redshift coverage of \cite{Parsons:2013p9876} to cover the range $10.5>z>7.6$.  The amount of foreground contamination slowly increases with redshift, paralleling the level of incoherent noise observed  This highlights the limitation of a the simple Blackman-Harris weighting scheme. Namely that the model of 
+
+With only 32 antenna, this data lacks the sensitivity to exclude all but the most extreme models, however, it does demonstrate the ability of the wideband filtration method to affectively remove foregrounds to the precision needed to integrate a full season to the thermal noise limit.  As future observations with PAPER  will add sensitivity primarily by increasing to 128 antennae this projects well for our ability to reach design sensitivity. 
 
 
 
