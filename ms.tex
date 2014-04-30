@@ -155,7 +155,7 @@ The residual correlations are all samples of the power spectrum. To estimate the
 \includegraphics[width=0.45\textwidth]{{figures/pspec_log_z_7.94}.png}
 \includegraphics[width=0.45\textwidth]{{figures/pspec_log_z_7.68}.png}
 \includegraphics[width=0.45\textwidth]{{figures/pspec_log_z_7.55}.png}
-\caption{\label{fig:pspecs} Left to right from top: power spectra centered on redshifts 10.3,8.5, 7.9, 7.7 and 7.6 (frequencies: 127, 149.5, 159.5 164.5, and 167 MHz) at an effective bandwidth of 10MHz or redshift range 0.5  }
+\caption{\label{fig:pspecs} Left to right from top: power spectra centered on redshifts 10.3,8.5, 7.9, 7.7 and 7.6 (frequencies: 127, 149.5, 159.5 164.5, and 167 MHz.  All with an effective bandwidth of $\pm$10MHz which covers the redshift span $\Delta z\approx$1421MHz ($B/f^2$) which ranges from 0.8 at $z=$10.3 to 0.45 at $z=$7.4.  }
 \end{figure}
 \section{Results}
 \label{sec:results}
@@ -183,7 +183,7 @@ The final fringe-rate step is the last coherent average of the processing routin
 In  Figure \ref{fig:pspecs} we show the  power spectra at different redshift bins --showing both the spherically averaged power spectrum plotted in $P_k$ units (left) and the final estimate of $\Delta^2$ -- and in Figure \ref{fig:slices} we see different $k$ mode slices as a function of redshift  all plotted with $2\sigma$ error bars.   The theoretical noise power spectrum is estimated using the method described in \cite{Pober:2014p10390} assuming a system temperature of 550K and the observing scheme described in Section \ref{sec:observations}.  Generally, both figures convey a picture of a power spectrum dominated by noise, with foregrounds encroaching from modes closest to the foreground contaminated modes.  Foreground dominance appears to grow with increasing redshift, mirroring the rise in baseline-to-baseline rms we found in Figure \ref{fig:noise}.  Recall that the wide-band foreground model we have subtracted is built by weighting the entire band by a Blackman-Harris window function.   Foreground removal is much weaker at this frequency, with the model subtracted being centered around 150MHz, contributions from this point in the band are down-weighted by 75\%.  This filter leads to the notch of missing power near $k_\parallel=0$  (except at z=7.68 where the foregrounds have been left in for comparison).  Only at redshift 10.3 is this notch nearly non-existent.  The relative distribution of foreground removal accuracy is also visible in the shape of $\Delta^2$ vs redshift at $k=0.1$ which is only a factor of two away from the light travel horizon.  This bin, which is firmly well into the foreground dominated portion of $k$ space has much the same shape as the $T_rms$ curve in Figure \ref{fig:noise}, with a minimum near redshift 8.5 and a dramatic rise above redshift 10.
 
 
-
+%Across the entire band some $k$ modes appear to be dominated somewhat by non-noise systematics, these are not always clearly foregrounds because they appear at only certain $k$ modes rather than clearly emanating from small delays like in the z=10.3 power spectrum.  
 
 
 \begin{figure}
@@ -200,9 +200,11 @@ In  Figure \ref{fig:pspecs} we show the  power spectra at different redshift bin
 
 
 
-With this paper we have extended the redshift coverage of \cite{Parsons:2013p9876} to cover the range $10.5>z>7.6$.  The amount of foreground contamination slowly increases with redshift, paralleling the level of incoherent noise observed  This highlights the limitation of a the simple Blackman-Harris weighting scheme. Namely that the model of 
+With this paper we have extended the redshift coverage of \cite{Parsons:2013p9876} to cover the range $10.5>z>7.6$.  The amount of foreground contamination slowly increases with redshift, paralleling the level of incoherent noise observed  This highlights the limitation of the Blackman-Harris weighting scheme used to estimate the broadband foreground model which trades spectral coverage for isolation between delay modes.  Accessing these regions nearer to the edge of the band, where there is less spectral information on which to base a foreground model will require some combination of methods for removing foregrounds that make maximal use of the full band without as much down-weighting, as well as a more precise method for removing foregrounds in the narrow band-power spectrum.  
 
-With only 32 antenna, this data lacks the sensitivity to exclude all but the most extreme models, however, it does demonstrate the ability of the wideband filtration method to affectively remove foregrounds to the precision needed to integrate a full season to the thermal noise limit.  As future observations with PAPER  will add sensitivity primarily by increasing to 128 antennae this projects well for our ability to reach design sensitivity. 
+
+
+With only 32 antenna, this data lacks the sensitivity to exclude all but the most extreme models, however, it does demonstrate the ability of the wideband filtration method to affectively remove foregrounds to the precision needed to integrate a full season to the thermal noise limit.  As future observations with PAPER  will add sensitivity primarily by increasing to 128 antennae this projects well for our ability to reach design sensitivity.  The residual foregrounds analyzed here are all at or near the level of noise and expose the next level of removal required to access a wider redshift range. 
 
 
 
