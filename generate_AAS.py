@@ -8,15 +8,13 @@ import re,os
 
 #target = 'arxiv_submission'
 project=os.path.basename(os.getcwd())
-target = 'apj_submission_1'
-
+#target = 'apj_submission_1'
+target= 'arxiv_submission_1'
 if target.startswith('arxiv'):
     tex = open('ms-arxiv.tex').read()
-    plots = re.findall('\\includegraphics.*\{([^}]+)\}',tex)
 else:
     tex = open('ms.tex').read()
-#    plots = re.findall('\{figures\/(\S*)\}',tex)
-    plots = re.findall('\\includegraphics.*\]{(.*)\}',tex)
+plots = re.findall('\\includegraphics.*\]{(.*)\}',tex)
 
 #clean out the '}'s from the figure paths
 l = ['a','b','c','d']
@@ -44,8 +42,7 @@ for i,plot in enumerate(plots):
     if target.startswith('arxiv'):
         print "cp ",plot_filenames[i],target
         os.system('cp %s %s/'%(plot_filenames[i],target))
-        tex = tex.replace(plot,plot)
-        print plot
+        tex = tex.replace(plot,plot.replace('figures/',''))
     else:
         print "cp ",plot_filenames[i],target
         os.system('convert %s %s/%s'%(plot_filenames[i],target,eps_plots[i]))
@@ -61,9 +58,9 @@ out = open('%s/ms.tex'%target,'w')
 out.write(tex)
 #os.system('cp figures/tab1.txt figures/tab2.txt %s'%target)
 if target.startswith('arxiv'):
-    os.system('tar -cjf %s.tar.bz2 %s/*'%(target,target))
+    os.system('tar -cjf %s.tar.bz2 -C %s .'%(target,target))
 else:
-    os.system('tar -czf {project}_{target}.tar.bz2 {target}/*'.format(target=target,project=project))
+    os.system('tar -czf {project}_{target}.tar.bz2 -C {target} .'.format(target=target,project=project))
 
 
 
