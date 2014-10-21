@@ -1,5 +1,5 @@
-\documentclass[fleqn,10pt,iop]{emulateapj}
-%\documentclass[preprint2]{aastex}
+%\documentclass[fleqn,10pt,iop]{emulateapj}
+\documentclass[preprint2]{aastex}
 
 \usepackage{url}
 \usepackage{multirow}
@@ -88,12 +88,7 @@ Here we report on deep integrations made with a 32 element array in 2011, first 
 
 
 
-%
-%This signal is though to be the richest data set on the sky!  Many telescopes are searching for the power spectral signature of 
-%HI.  Coarsely, models of 21cm emission can be distilled into two parameters. The redshift at which point the universe was 50\% ionized ($z_i$) and the transition time from mostly neutral to mostly ionized $dz$. Thus full coverage of the spectrum is essential.
 
-
-%This paper extends the result ARP2013a to cover the redshift range XXX.
 
 \section{Observations}
 \label{sec:observations}
@@ -128,7 +123,7 @@ The spectral width of the redshift bins is dictated by two competing needs. Firs
 
 
 \subsection{Initial Averaging}
-  First, the raw data are down-selected to just the 70 $\sim$30m long baselines described in Section \ref{sec:observations}.  %I know this isn't technically true, but I think its important that the downselect is obvious up front.
+  First, the raw data are down-selected to just the 70 $\sim$30m long baselines described in Section \ref{sec:observations}.  
    The visibilities are then compressed in the frequency and time directions by removing delay modes and highest frequency fringe rates corresponding to a 300m baseline (the longest baseline in the array).  This filtering\footnote{See Appendix A of P14} is done in tandem with a radio frequency interference (RFI) flagging step, using the residuals which have had bright sky-like signals removed to flag 4$\sigma$ deviations before feeding the flags back into another iteration of the compression step. This mitigates the effects of bright, narrow band, interference  being scattered into higher delay modes (where only the reionization signal is expected to be found) and results in a time and frequency bin of length 40s and width 492.61kHz. 
   This process reduces the data volume by a factor of $\sim$20, or roughly an order of magnitude improvement on traditional time and frequency averaging which in this array would be limited to ~100kHz and 10s to avoid averaging away fringes.
   
@@ -143,7 +138,7 @@ Relative calibration allows the gains of different antennas to be calibrated aga
 \includegraphics[width=\textwidth]{figures/psa32_flagging_zbins.png}
 \caption{\label{fig:bins} The average amount of data remaining after interference flagging over the 3 month period between Dec 2011 and March 2012 (black line) is quite high.  Redshift bins (in grey, redshift center indicated with text label) are chosen to include spectral channels with uniform weight, i.e. no missing channels while maximizing coverage over the band.  Redshift 7.68 is included for comparison with P14.  Channels with no missing data are indicated by the dotted line, visible at the edge of flagged channels. Each redshift bin is 20 MHz wide, but weighted by a Blackman-Harris window function which heavily down-weights the outer 10MHz for a Noise Equivalent Bandwidth of 10MHz.  The interference is almost exclusively dominated by two features: ORBCOMM satellites at 137MHz and an unidentified intermittent line emitter at 175MHz. The roll off at 115MHz is due the rising noise at low frequencies being incorrectly flagged as interference.  }
 \end{figure*} 
-%The success of the remainder of the processing stages hinges on the spectral stability of the data, which can easily be assessed by comparing redundant baselines. In figure XXX we see the r.m.s. of the ratios between redundant calibrations, before and after the calibration has been applied.  
+
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{figures/psa32_trms_with_and_without_fr_filtering_z.png}
@@ -156,16 +151,14 @@ Foregrounds are filtered from the calibrated data by removing all bright delay c
 
 Though the frequency and repeated nightly observations have been averaged to their maximum extent, at 40s integrations the time axis has yet to be fully exploited.  Sky-like fringes on a 30m baseline rotate much slower than 40 seconds.  Performing a final fringe-rate filter, limiting to fringe-rates expected on a 30m baseline (down from 300m in the last iteration), we arrive at a data-set averaged to 789s, the maximum possible while still maintaining fringe coherence.    The root mean square of the residual signal (seen in Figure \ref{fig:noise}) at the end of this process is close to the 3mK level expected given the total integration time and  system temperature.  
 
-%This step is the first point at which signal loss could occur. To measure the loss we add white noise into the data at a level sufficient to double the system temperature (to make it easily detectable on the output), subtract  and then measure the fractional difference post filtration. We recover XXX\% of the injected signal.
 
-%delay transform, covariance projection (lossless, and lossy), bin and bootstrap average,
 \subsection{Power Spectrum}
 \label{sec:power_spectrum}
 The output of the above steps is eight sidereal hours of calibrated, foreground filtered visibility data averaged over 92 nights. The power spectrum is estimated in the delay spectrum of  a 10MHz bandwidth range centered on the redshift of interest. To preserve the isolation of any foregrounds which remain, we increase the spectral range by 5MHz on each side and multiply by a Blackman-Harris window thus providing a much higher dynamic range delay spectrum point spread function. 
 
 This leaves us with 40 delay samples on each of 70 baselines which are divided into three redundant groups. Within these groups we cross correlate delay spectra between different redundant baselines.  The cross multiplication of the same delay modes between different redundant baselines provides an unbiased estimate of the power spectrum.  These ``sky-like'' correlations should be identical between all redundant baselines to within the level of the noise, while all other cross multiplications between delay modes should not be correlated between different baselines. In practice  these non-sky-like modes do occasionally have significant power which leaks into the correlations which sample the power spectrum.  These are removed by iteratively dividing the covariance into a model of systematics and a model of sky-like emission and then projecting out large residual modes. This is done by dividing the baselines into different groups such that all cross-multiplications are done without introducing noise bias.  For more see Appendix C of P14.
 
-The residual elements of the correlation matrix corresponding to cross-multiplication of matching delay bins between different baselines are all un-biased samples of the power spectrum. To estimate the final power spectrum and its uncertainty we compute the mean and variance of many random randomly-selected subsamples, sampling the dimensions: sidereal time, redundant baseline pair, and delay sign\footnote{As visibilities are complex, both the positive and negative delays  carry  information. Physically the two signs correspond to the two halves of the sky.}.
+The residual elements of the correlation matrix corresponding to cross-multiplication of matching delay bins between different baselines are all un-biased samples of the power spectrum. To estimate the final power spectrum and its uncertainty we compute the mean and variance of many random randomly-selected subsamples, sampling the dimensions: sidereal time, redundant baseline pair, and delay sign\footnote{As visibilities are complex, both the positive and negative delays  carry  information. Physically the two signs correspond to the two halves of the sky.}. For simplicity, measurements are averaged with equal weights.
 
 
 
@@ -225,13 +218,15 @@ After the last stage of coherent integration (from the top set of curves to the 
 
 In  Figure \ref{fig:pspecs} we show the  power spectra at different redshift bins --showing both the spherically averaged power spectrum $P(k)$ and the volume weighted  $\Delta^2(k)\equiv\frac{k^3}{2\pi^2}P(k)$.  The $P(k)$ spectrum averages the three baseline types but preserves the positive and negative delays; it is essentially just the average delay spectrum scaled to temperature and cosmological units. Note that due to the choice of window function, the adjacent $k$ bins correlate at the  50\% level. In Figure \ref{fig:slices} we see different $k$ mode slices as a function of redshift,  all plotted with $1\sigma$ error bars derived from the bootstrap process and compared with the theoretical noise level. Table \ref{tab:data} we list the data plotted in these slices.   
 
-The theoretical noise power spectrum (dashed line in Figures \ref{fig:pspecs} and \ref{fig:P14compare} and grey region in Figure \ref{fig:slices}) is estimated using the method described in \cite{Pober:2013p9581}, assuming a system temperature of 550K and the observing scheme described in Section \ref{sec:observations}. In all figures the noise levels are plotted for comparison with the power spectrum values rather than the error bars, i.e. 68\% of uncorrelated, noise-dominated points should lie below the line or within the grey region.    Points where the error bar does not cross zero are inconsistent with noise at $>68$\% these are listed as ``detections'' in Table \ref{tab:data}.   
+The theoretical noise power spectrum (dashed line in Figures \ref{fig:pspecs} and \ref{fig:P14compare} and grey region in Figure \ref{fig:slices}) is estimated using the method described in \cite{Pober:2013p9581}, assuming a system temperature of 550K and the observing scheme described in Section \ref{sec:observations}. In general the theoretical error bars are smaller than those derived by the bootstrap.  This is most likely due to the use of uniform weighting when combining power spectrum measurements, rather then the inverse variance weights assumed in the sensitivity calculation.
 
-If our measurements were completely noise dominated, $68\%$ of the data points ought to include zero within their error bars.  In Table \ref{tab:data}, we divide the points into ``Detections" (power spectrum values smaller than $1\sigma$ errors), and ``Upper limits" (measured values larger).  With only one exception, this scheme yields the same results whether we use the theoretical errors or the bootstrap errors.  Under this scheme, we would expect a noise dominated signal to yield around eight ``upper limits'' with an equal number of positive and negative data points. Here we find only two to three upper limits while rest we classify as detections. In general, most detections are within 1 - 2 $\sigma$ but are all positively biased,  with the significance rising steeply at high redshifts and low $k$s.%, the quadratic sum of all errors above $k=0.1$ is 6.6 $\sigma$ indicating that the excess is largely coherent across the data set.
+ In all figures the noise levels are plotted for comparison with the power spectrum values rather than the error bars, i.e. 68\% of uncorrelated, noise-dominated points should lie below the line or within the grey region.    Points where the error bar does not cross zero are inconsistent with noise at $>68$\% these are listed as ``detections'' in Table \ref{tab:data}.   
+
+If our measurements were completely noise dominated, $68\%$ of the data points ought to include zero within their error bars.  In Table \ref{tab:data}, we divide the points into ``Detections" (power spectrum values smaller than $1\sigma$ errors), and ``Upper limits" (measured values larger).  With only one exception, this scheme yields the same results whether we use the theoretical errors or the bootstrap errors.  Under this scheme, we would expect a noise dominated signal to yield around eight ``upper limits'' with an equal number of positive and negative data points. Here we find only two upper limits while the rest we classify as low significance detections of excess power. In general, most detections are within 1 - 2 $\sigma$ but are all positively biased,  with the significance rising steeply at high redshifts and low $k$s.%, the quadratic sum of all errors above $k=0.1$ is 6.6 $\sigma$ indicating that the excess is largely coherent across the data set.
 
 
 
-\subsection{The Excess Signal}
+\subsection{The Excess Power}
 
 As these measurements have a maximum possible sensitivity level which is still two orders of magnitude away from theoretical reionization levels we consider the likelihood that these detections are evidence of reionization to be small. Far more likely is that we are limited by a residual foreground or systematic arising from approximations in the data analysis.  The statistical significance of the residual --2$\sigma$ after averaging over the entire season-- is low enough that it is not possible to break it down along likely axes like sidereal time or time of day to probe its origin.  Such studies must await higher sensitivity measurements with more antennas.  However, there are several additional features that seem to suggest an excess not caused by high redshift HI.
 
@@ -268,30 +263,30 @@ The residual level is also illustrated in the $k$ slices of Figure \ref{fig:slic
 \colhead{[hMpc$^{-1}$]} & 
 \colhead{}  & 
 \colhead{[mK$^2$]} &
+\colhead{[mK$^2$]} &
 \colhead{ $\sigma$} & 
 \colhead{}&
 \colhead{\parbox{7em}{[mK$^2$]} }& 
-\colhead{[mK$^2$]}&
 \colhead{$\sigma$} & 
 \colhead{}
 }
 \startdata
-0.1 & 10.29 & 43600 & $\pm$   700 & 64.4 & Det & $\pm$  5700 & 7.6 & Det \tabularnewline
-0.1 & 8.54 &  5700 & $\pm$   300 & 20.4 & Det & $\pm$  1200 & 4.9 & Det \tabularnewline
-0.1 & 7.94 &  7700 & $\pm$   200 & 33.6 & Det & $\pm$  2000 & 3.8 & Det \tabularnewline
-0.1 & 7.55 &  9500 & $\pm$   200 & 61.7 & Det & $\pm$  2800 & 3.4 & Det \tabularnewline
-0.2 & 10.29 & 11400 & $\pm$  5300 & 2.1 & Det & $\pm$  5000 & 2.3 & Det \tabularnewline
-0.2 & 8.54 &  5900 & $\pm$  2200 & 2.7 & Det & $\pm$  2200 & 2.7 & Det \tabularnewline
-0.2 & 7.94 &  5100 & $\pm$  1800 & 2.9 & Det & $\pm$  1800 & 2.9 & Det \tabularnewline
-0.2 & 7.55 &   900 & $\pm$  1200 & 0.7 & ULim & $\pm$  1500 & 0.6 & ULim \tabularnewline
-0.3 & 10.29 & 34800 & $\pm$ 17900 & 1.9 & Det & $\pm$ 16400 & 2.1 & Det \tabularnewline
-0.3 & 8.54 & 12900 & $\pm$  7300 & 1.8 & Det & $\pm$  5400 & 2.4 & Det \tabularnewline
-0.3 & 7.94 &  5200 & $\pm$  6000 & 0.9 & ULim & $\pm$  4800 & 1.1 & Det \tabularnewline
-0.3 & 7.55 &  7600 & $\pm$  4000 & 1.9 & Det & $\pm$  4800 & 1.6 & Det \tabularnewline
-0.4 & 10.29 & 42900 & $\pm$ 42400 & 1.0 & Det & $\pm$ 30700 & 1.4 & Det \tabularnewline
-0.4 & 8.54 & 24100 & $\pm$ 17400 & 1.4 & Det & $\pm$ 16600 & 1.5 & Det \tabularnewline
-0.4 & 7.94 & 14700 & $\pm$ 14200 & 1.0 & Det & $\pm$  9900 & 1.5 & Det \tabularnewline
-0.4 & 7.55 & -8600 & $\pm$  9400 & -0.9 & ULim & $\pm$ 14200 & -0.6 & ULim \tabularnewline
+0.1 & 10.29 & 43600 & $\pm$   400 & 105.6 & Det & $\pm$  5700 & 7.6 & Det \tabularnewline
+0.1 & 8.54 &  5700 & $\pm$   200 & 33.0 & Det & $\pm$  1200 & 4.9 & Det \tabularnewline
+0.1 & 7.94 &  7700 & $\pm$   100 & 56.2 & Det & $\pm$  2000 & 3.8 & Det \tabularnewline
+0.1 & 7.55 &  9500 & $\pm$   100 & 122.7 & Det & $\pm$  2800 & 3.4 & Det \tabularnewline
+0.2 & 10.29 & 11400 & $\pm$  3300 & 3.5 & Det & $\pm$  5000 & 2.3 & Det \tabularnewline
+0.2 & 8.54 &  5900 & $\pm$  1400 & 4.3 & Det & $\pm$  2200 & 2.7 & Det \tabularnewline
+0.2 & 7.94 &  5100 & $\pm$  1100 & 4.8 & Det & $\pm$  1800 & 2.9 & Det \tabularnewline
+0.2 & 7.55 &   900 & $\pm$   600 & 1.4 & Det & $\pm$  1500 & 0.6 & ULim \tabularnewline
+0.3 & 10.29 & 34800 & $\pm$ 11000 & 3.2 & Det & $\pm$ 16400 & 2.1 & Det \tabularnewline
+0.3 & 8.54 & 12900 & $\pm$  4600 & 2.8 & Det & $\pm$  5400 & 2.4 & Det \tabularnewline
+0.3 & 7.94 &  5200 & $\pm$  3600 & 1.4 & Det & $\pm$  4800 & 1.1 & Det \tabularnewline
+0.3 & 7.55 &  7600 & $\pm$  2000 & 3.8 & Det & $\pm$  4800 & 1.6 & Det \tabularnewline
+0.4 & 10.29 & 42900 & $\pm$ 26000 & 1.7 & Det & $\pm$ 30700 & 1.4 & Det \tabularnewline
+0.4 & 8.54 & 24100 & $\pm$ 10800 & 2.2 & Det & $\pm$ 16600 & 1.5 & Det \tabularnewline
+0.4 & 7.94 & 14700 & $\pm$  8500 & 1.7 & Det & $\pm$  9900 & 1.5 & Det \tabularnewline
+0.4 & 7.55 & -8600 & $\pm$  4800 & -1.8 & Det & $\pm$ 14200 & -0.6 & ULim \tabularnewline
 \enddata
 \tablenotetext{a}{All error bars are 1 $\sigma$.}
 \tablenotetext{b}{Det indicates a measurement and error-bar inconsistent with zero, ULim indicates consistency with zero at 1 $\sigma$.}
@@ -309,7 +304,7 @@ Most of the power spectrum data points demonstrate a removal of foreground signa
 
 The fact that the best upper limit still comes from the z = 7.6 band does illustrate that this redshift corresponds to a somewhat special frequency for the PAPER instrument, where the combined contribution of system noise, RFI signals, and residual foregrounds (if any remain) are at a minimum.  The success of the filtering style foreground removal heavily leverages the surrounding spectral coverage, and is somewhat less effective at removing foregrounds across the entire band. 
 
-Further work will look to expand on this result on several fronts.  Alternative algorithms to the wide-band CLEAN could potentially better remove the delay-space covariance introduced by RFI flags in frequency and are under investigation.  Another active point of investigation is aimed at alternative windows to the Blackman-Harris used in the wide-band CLEAN (or wholly distinct algorithms) that could better remove foregrounds from the edges of the band while still limiting foreground bleed into the EoR window.  
+Further work will look to expand on this result on several fronts.  Alternative algorithms to the wide-band CLEAN could potentially better remove the delay-space covariance introduced by RFI flags in frequency and are under investigation.  Another active point of investigation is aimed at alternative windows to the Blackman-Harris used in the wide-band CLEAN (or wholly distinct algorithms) that could better remove foregrounds from the edges of the band while still limiting foreground bleed into the EoR window.  Weighting of the final power spectrum average is also a subject for further improvement.   In this analysis we have used uniform weights; this is also the default assumption of most sensitivity calculations, including the one used here.  Uniform weighting is optimal if the final measurements are limited by something other than noise, while inverse variance is appropriate for purely noise limited measurements.  Given how close the error bars are to noise dominated, future analysis will investigate using different estimates of the variance for optimal weighting.
 
 Future work will also include observations from subsequent seasons with more antennas.  The observations reported here demonstrate a nearly noise limited integration over a full season but used only a quarter of the final design antenna count. These  32 antenna observations from 2011 were followed by a full season of 64 antennas in 2012 and 128 in 2013.  A second season of observing with the 128 antenna array is now under way. In going from  32 to 128 antenna the mK$^2$ sensitivity increases by the expected factor of 4 and by an additional factor of $\sim$2 after accounting for the substantial uv-plane redundancy \citep{Parsons:2012p9028}. 
 
